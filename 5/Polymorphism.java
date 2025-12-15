@@ -10,8 +10,7 @@ public class Polymorphism {
     }
 
      static boolean usrstrcmp(String s1, String s2, int n){
-        int len = Math.min(s1.length(),s2.length());
-        for(int i=0; i<len; i++){
+        for(int i=0; i<n; i++){
             if(s1.charAt(i)!=s2.charAt(i)) return false;
         }
         return true;
