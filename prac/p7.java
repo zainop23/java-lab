@@ -1,27 +1,24 @@
-class P7{
+public class p7 {
+    int in=0, out=0, count=0;
     int[] buf = new int[5];
-    int in=0,out=0,count=0;
-
-    synchronized void put(int n)throws InterruptedException{
-        while(buf.length==count) wait();
+    synchronized void put(int n) throws InterruptedException{
+        if(buf.length==count) wait();
         buf[in]=n;
         in = (in+1)%buf.length;
-        count++;
         System.out.println("Produced: "+n);
         notifyAll();
     }
 
-    synchronized int get()throws InterruptedException{
-        while(count==0) wait();
-        int item = buf[out];
+    synchronized void get() throws InterruptedException{
+        if(buf.length==0) wait();
+        int n = buf[out];
         out = (out+1)%buf.length;
-        count--;
-        System.out.println("Consumed: "+item);
+        System.out.println("Consumed: "+ n);
         notifyAll();
-        return item;
     }
+
     public static void main(String[] args) {
-        P7 pc = new P7();
+        p7 pc = new p7();
         new Thread(()->{
             try {
                 for(int i=1; i<=10; i++){
@@ -33,12 +30,11 @@ class P7{
 
         new Thread(()->{
             try {
-                while(true){
+                while (true) { 
                     pc.get();
                     Thread.sleep(1000);
                 }
             } catch (InterruptedException ignored) {}
-
         }).start();
     }
 }
