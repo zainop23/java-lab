@@ -1,23 +1,50 @@
 import java.sql.*;
+import java.util.*;
 
 public class prg10 {
     public static void main(String[] args) throws Exception {
-        // Updated for XAMPP: empty password
-        try (Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb", "root", "");
-             Statement s = c.createStatement()) {
 
-            s.execute("CREATE TABLE IF NOT EXISTS users (id INT, name VARCHAR(50))");
-            s.executeUpdate("INSERT INTO users VALUES (1, 'Alice')");
-            System.out.println("Inserted Alice");
+        Connection c = DriverManager.getConnection(
+                "jdbc:mysql://localhost:3306/lab", "root", "");
+        Scanner sc = new Scanner(System.in);
 
-            ResultSet rs = s.executeQuery("SELECT * FROM users");
-            while (rs.next()) System.out.println("Read: " + rs.getString("name"));
+        // CREATE
+        String createSQL = "CREATE TABLE IF NOT EXISTS users (id INT PRIMARY KEY, name VARCHAR(50))";
+        Statement s = c.createStatement();
+        s.execute(createSQL);
 
-            s.executeUpdate("UPDATE users SET name = 'Bob' WHERE id = 1");
-            System.out.println("Updated Alice to Bob");
+        // INSERT (Create)
+        String insertSQL = "INSERT INTO users VALUES (?, ?)";
+        PreparedStatement pst = c.prepareStatement(insertSQL);
+        System.out.print("Enter id: ");
+        int id = Integer.parseInt(sc.nextLine());
+        System.out.print("Enter name: ");
+        String name = sc.nextLine();
+        pst.setInt(1, id);
+        pst.setString(2, name);
+        pst.executeUpdate();
+        System.out.println("Inserted successfully");
 
-            s.executeUpdate("DELETE FROM users WHERE id = 1");
-            System.out.println("Deleted Bob");
-        }
+        // READ
+        ResultSet rs = s.executeQuery("SELECT * FROM users"); 
+        while (rs.next()) System.out.println("Read: " + rs.getString("name"));
+        // UPDATE
+        String updateSQL = "UPDATE users SET name=? WHERE id=?";
+        pst = c.prepareStatement(updateSQL);
+        System.out.print("Enter new name: ");
+        String newName = sc.nextLine();
+        pst.setString(1, newName);
+        pst.setInt(2, id);
+        pst.executeUpdate();
+        System.out.println("Updated successfully");
+
+        // DELETE
+        String deleteSQL = "DELETE FROM users WHERE id=?";
+        pst = c.prepareStatement(deleteSQL);
+        pst.setInt(1, id);
+        pst.executeUpdate();
+        System.out.println("Deleted successfully");
+
+        c.close();
     }
 }
