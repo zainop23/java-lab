@@ -6,8 +6,14 @@ public class p1{
         // x^2-3x+2
         double a=1,b=-3,c=2;
         double d = b*b - 4*a*c;
-        System.out.println("Roots : " + (-b + Math.sqrt(d)/2) + ", " + (-b - Math.sqrt(d)/2));
-        
+        if(d>0) System.out.println("Roots : " + (-b + Math.sqrt(d))/2 + ", " + (-b - Math.sqrt(d))/2);
+        else if(d==0) System.out.println("Roots are: " + (-b)/(2*a)); 
+        else {
+            double real = -b/(2*a);
+            double imag = (Math.sqrt(-d))/(2*a);
+            System.out.println(real+ "+" + imag + "i" + " and " + real+ "-" + imag + "i");
+        }
+            
         //Multiply two arrays
         int[] x={1,2,3}, y={2,3,4}, z=new int[3];
         for(int i=0; i<3; i++){
