@@ -1,4 +1,4 @@
-class P8{
+class P7{
     int[] buf = new int[5];
     int in=0,out=0,count=0;
 
@@ -21,7 +21,7 @@ class P8{
         return item;
     }
     public static void main(String[] args) {
-        P8 pc = new P8();
+        P7 pc = new P7();
         new Thread(()->{
             try {
                 for(int i=1; i<=10; i++){
