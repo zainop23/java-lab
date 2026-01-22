@@ -27,4 +27,3 @@ c. Compare two complex numbers.
 
 12. Write a java program using JSP that takes a name as input and has a submit button, on clicking submit  button it shows a hello <name> page where name is taken from the request. It shows the start time at  the right top corner of the page and provides a logout button. On clicking this button, it should show  a logout page with Thank You <name > message with the duration of usage (hint: Use session to store  name and time).
 
-
