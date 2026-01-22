@@ -19,10 +19,14 @@ c. Compare two complex numbers.
 
 6. Write a Java program to define a base class bank, which holds various details of customers such as  name, account number, balance and member functions to read, display and an abstract method to  calculate rate of interest earned by all the account holders. Derive three classes namely City-Bank, SBI bank, Canara-bank from this base class, which are offering different rate of interests. Extend the  calculate method of base class with in these derived classes to calculate and display the interest earned  by all the account holders of these banks.
 
-7. Write a multi-threaded java program to illustrate producer consumer problem. 8. Write a java program to read two positive integers and perform the division operation on them and  display the result if a user enters a positive integer and non-zero denominator. Else, If the input is negative or the denominator is zero, generate negative number input and divide by zero exception to  handle the scenario.
+7. Write a multi-threaded java program to illustrate producer consumer problem.
+
+8. Write a java program to read two positive integers and perform the division operation on them and  display the result if a user enters a positive integer and non-zero denominator. Else, If the input is negative or the denominator is zero, generate negative number input and divide by zero exception to  handle the scenario.
 
 9. Write a java program to define an interface compute with an abstract method convert, define two  classes which implements the compute interface and extend the convert method to convert giga bytes  to bytes and Euro to rupees. Declare objects for both the classes and demonstrate the conversion from  giga bytes to bytes and euro to rupees.
 
-10. Write a java program that connects to a database using JDBC and demonstrate CRUD operations. 11. Write a java servlet program that takes name and age from an HTML page. If the age is less than 18, it  should send a page with “Hello _______(name), you are not authorized to visit the site” message,  where “_________” in the message should be replaced with the entered name. Otherwise it should  send “Welcome to this site” message.
+10. Write a java program that connects to a database using JDBC and demonstrate CRUD operations. 
+
+11. Write a java servlet program that takes name and age from an HTML page. If the age is less than 18, it  should send a page with “Hello _______(name), you are not authorized to visit the site” message,  where “_________” in the message should be replaced with the entered name. Otherwise it should  send “Welcome to this site” message.
 
 12. Write a java program using JSP that takes a name as input and has a submit button, on clicking submit  button it shows a hello <name> page where name is taken from the request. It shows the start time at  the right top corner of the page and provides a logout button. On clicking this button, it should show  a logout page with Thank You <name> message with the duration of usage (hint: Use session to store  name and time).
