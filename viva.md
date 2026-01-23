@@ -336,3 +336,82 @@ A: Belongs to class, not instance. Shared among all objects.
 
 **Q: What is final keyword?**
 A: final variable: constant. final method: can't override. final class: can't inherit.
+
+---
+
+## General OOPs Concepts
+
+**Q: What is OOP?**
+A: Object-Oriented Programming - paradigm based on objects containing data and methods.
+
+**Q: What are the 4 pillars of OOP?**
+A: Encapsulation, Inheritance, Polymorphism, Abstraction.
+
+**Q: What is encapsulation?**
+A: Wrapping data and methods together, hiding internal details using access modifiers.
+
+**Q: What is inheritance?**
+A: Child class acquires properties and methods of parent class. Promotes code reuse.
+
+**Q: What is polymorphism?**
+A: Same method behaves differently. Two types: compile-time (overloading) and runtime (overriding).
+
+**Q: What is abstraction?**
+A: Hiding implementation details, showing only essential features. Achieved via abstract classes and interfaces.
+
+**Q: What is a class?**
+A: Blueprint/template defining properties (variables) and behaviors (methods) of objects.
+
+**Q: What is an object?**
+A: Instance of a class. Has state (data) and behavior (methods).
+
+**Q: What is a constructor?**
+A: Special method to initialize objects. Same name as class, no return type.
+
+**Q: Types of constructors?**
+A: Default (no parameters), Parameterized (with parameters), Copy constructor (copies another object).
+
+**Q: What is method overloading?**
+A: Same method name, different parameters in same class. Compile-time polymorphism.
+
+**Q: What is method overriding?**
+A: Child class redefines parent method with same signature. Runtime polymorphism.
+
+**Q: What are access modifiers?**
+A: public: everywhere. private: same class. protected: same package + subclasses. default: same package.
+
+**Q: What is 'this' keyword?**
+A: Refers to current object. Used to distinguish instance variables from parameters.
+
+**Q: What is 'super' keyword?**
+A: Refers to parent class. Calls parent constructor or methods.
+
+**Q: What is 'new' keyword?**
+A: Creates new object and allocates memory on heap.
+
+**Q: What is data hiding?**
+A: Making variables private and providing public getters/setters. Part of encapsulation.
+
+**Q: What is a getter and setter?**
+A: Getter: returns private variable. Setter: sets private variable. Provides controlled access.
+
+**Q: Can a class be private?**
+A: Outer class: No. Inner class: Yes.
+
+**Q: What is an IS-A relationship?**
+A: Inheritance relationship. Dog IS-A Animal.
+
+**Q: What is a HAS-A relationship?**
+A: Composition/Aggregation. Car HAS-A Engine.
+
+**Q: Difference between composition and aggregation?**
+A: Composition: strong relationship, child can't exist without parent. Aggregation: weak, child can exist independently.
+
+**Q: What is tight coupling?**
+A: Classes heavily dependent on each other. Bad practice.
+
+**Q: What is loose coupling?**
+A: Minimal dependency between classes. Good practice, use interfaces.
+
+**Q: Why use OOP?**
+A: Code reusability, modularity, security (data hiding), easier maintenance, real-world modeling.
